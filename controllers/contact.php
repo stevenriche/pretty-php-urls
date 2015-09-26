@@ -5,8 +5,12 @@ class contact
 	private $_base_url;
 	
 		public function __construct($params, $base_url) { // constructor with parameters, base url (for js and css)
-	        $this->_params = $params;
-			$this->_base_url = $base_url;
+	        // when we create a test object to see if it has the right method, we don't want to accidentally run anything 
+	        // in the constructor
+	        if ($base_url != ''){ 
+	        	$this->_params = $params;
+				$this->_base_url = $base_url;
+			}
 	    }
 	
 	/*
